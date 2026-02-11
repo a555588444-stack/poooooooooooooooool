@@ -2,7 +2,7 @@ name: Deploy static site to GitHub Pages
 
 on:
   push:
-    branches: ["main", "work"]
+    branches: ["main", "master", "work"]
   workflow_dispatch:
 
 permissions:
@@ -27,11 +27,18 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Validate required files
+        run: |
+          test -f index.html
+          test -f study-site.html
+
       - name: Prepare site
         run: |
           mkdir -p _site
           cp index.html _site/index.html
           cp study-site.html _site/study-site.html
+          cp index.html _site/404.html
+          touch _site/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
