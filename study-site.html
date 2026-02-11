@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منصة الدراسة الذكية</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #0ea5e9;
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --card: #ffffff;
+      --muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Tahoma", Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    header {
+      background: linear-gradient(120deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 1.2rem;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    .card h2 {
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+      font-size: 1.2rem;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    ul li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    ul li:last-child {
+      border-bottom: none;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.55rem 1rem;
+      border-radius: 10px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 1.5rem 1rem 2.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>مرحباً بك في منصة الدراسة الذكية</h1>
+    <p>
+      موقع بسيط يساعدك على تنظيم المذاكرة، متابعة التقدم، والوصول إلى مصادر تعليمية في مكان واحد.
+    </p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>خطة اليوم</h2>
+      <p class="muted">قسّم وقتك بين المواد لتحقيق أفضل تركيز.</p>
+      <ul>
+        <li>08:00 - 09:00: رياضيات</li>
+        <li>09:30 - 10:30: لغة عربية</li>
+        <li>11:00 - 12:00: علوم</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>مواد دراسية</h2>
+      <p class="muted">اختر المادة التي تريد مراجعتها الآن.</p>
+      <ul>
+        <li>الرياضيات</li>
+        <li>الفيزياء</li>
+        <li>اللغة الإنجليزية</li>
+        <li>التاريخ</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>متابعة الإنجاز</h2>
+      <p class="muted">سجل تقدمك الأسبوعي بسهولة.</p>
+      <ul>
+        <li>حل 20 تمريناً ✅</li>
+        <li>مراجعة فصلين ✅</li>
+        <li>اختبار تجريبي ⏳</li>
+      </ul>
+      <a href="#" class="btn">ابدأ الآن</a>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 منصة الدراسة الذكية - نسخة تجريبية
+  </footer>
+</body>
+</html>
