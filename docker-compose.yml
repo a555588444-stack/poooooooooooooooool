@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: faislook
+      POSTGRES_USER: faislook
+      POSTGRES_PASSWORD: faislook123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    build: .
+    depends_on:
+      - db
+    environment:
+      SECRET_KEY: super-secret-key-change
+      DATABASE_URL: postgresql+psycopg2://faislook:faislook123@db:5432/faislook
+    ports:
+      - "5000:5000"
+
+volumes:
+  pgdata:

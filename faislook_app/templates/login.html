@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}تسجيل الدخول{% endblock %}
+{% block content %}
+<section class="card small">
+  <h2>تسجيل الدخول</h2>
+  <form method="post" class="form">
+    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+    <input type="password" name="password" placeholder="كلمة المرور" required>
+    <button type="submit">دخول</button>
+  </form>
+</section>
+{% endblock %}

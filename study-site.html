@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فايسلووك - منصة اجتماعية عربية</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #0ea5e9;
+      --accent: #7c3aed;
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --card: #ffffff;
+      --muted: #64748b;
+      --success: #16a34a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Tahoma", Arial, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.8; }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      color: white;
+      padding: 2.5rem 1.2rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; margin-bottom: .7rem; }
+    header p { max-width: 760px; margin: 0 auto; opacity: .95; }
+
+    .cta { margin-top: 1rem; display: inline-flex; gap: .6rem; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: #1e3a8a;
+      text-decoration: none;
+      padding: .55rem 1rem;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 1.5rem auto;
+      padding: 0 1rem 2rem;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1rem;
+    }
+
+    .feed, .side, .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 1rem;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+      margin-bottom: 1rem;
+    }
+
+    .card h2, .feed h2, .side h2 { color: var(--primary); margin-bottom: .55rem; }
+    .muted { color: var(--muted); font-size: .95rem; }
+    ul { list-style: none; margin-top: .5rem; }
+    li { padding: .35rem 0; border-bottom: 1px solid #e2e8f0; }
+    li:last-child { border-bottom: 0; }
+
+    .post {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: .8rem;
+      margin-top: .8rem;
+      background: #fcfdff;
+    }
+    .post .meta { font-size: .85rem; color: var(--muted); margin-bottom: .3rem; }
+
+    .auth-form {
+      display: grid;
+      gap: .6rem;
+      margin-top: .7rem;
+    }
+    .auth-form input {
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: .55rem .65rem;
+      width: 100%;
+    }
+    .auth-form button {
+      border: 0;
+      background: var(--primary);
+      color: #fff;
+      padding: .6rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: var(--success);
+      border-radius: 999px;
+      padding: .2rem .6rem;
+      font-size: .8rem;
+      margin-top: .4rem;
+    }
+
+    footer { text-align: center; color: var(--muted); padding: 1rem 0 2rem; }
+
+    @media (max-width: 920px) {
+      main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>فايسلووك</h1>
+    <p>
+      منصة اجتماعية عربية تجمع ميزات شبيهة بـ Facebook و Discord: منشورات، مجموعات، غرف دردشة،
+      ومحادثات فورية، مع إمكانية إنشاء حساب بسهولة.
+    </p>
+    <div class="cta">
+      <a class="btn" href="#create-account">إنشاء حساب جديد</a>
+      <a class="btn" href="#chat-features">ميزات الدردشة</a>
+      <a class="btn" href="#community">المجتمع</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <article class="feed" id="community">
+        <h2>الخلاصة العامة</h2>
+        <p class="muted">آخر المنشورات من مجتمع فايسلووك.</p>
+
+        <div class="post">
+          <div class="meta">نشره: أحمد علي • منذ 8 دقائق</div>
+          <p>أطلقنا غرفة صوتية جديدة لمناقشة البرمجة مساء اليوم 🎙️</p>
+        </div>
+
+        <div class="post">
+          <div class="meta">نشرته: سارة محمد • منذ 20 دقيقة</div>
+          <p>تم إنشاء مجموعة "تعلم الذكاء الاصطناعي" مع قنوات نصية وصوتية.</p>
+        </div>
+      </article>
+
+      <article class="feed" id="chat-features">
+        <h2>ميزات تشبه Discord</h2>
+        <ul>
+          <li>سيرفرات (Servers) متعددة لكل مجتمع.</li>
+          <li>قنوات نصية وصوتية Voice Channels.</li>
+          <li>صلاحيات وأدوار إدارية متقدمة.</li>
+          <li>إشعارات فورية وعداد رسائل غير مقروءة.</li>
+        </ul>
+      </article>
+    </section>
+
+    <aside>
+      <article class="side card" id="create-account">
+        <h2>إنشاء حساب في فايسلووك</h2>
+        <p class="muted">نموذج واجهة أولي للتسجيل.</p>
+
+        <form class="auth-form">
+          <input type="text" placeholder="الاسم الكامل" />
+          <input type="email" placeholder="البريد الإلكتروني" />
+          <input type="password" placeholder="كلمة المرور" />
+          <button type="button">إنشاء الحساب</button>
+        </form>
+
+        <span class="badge">جاهز للربط مع Backend وقاعدة البيانات</span>
+      </article>
+
+      <article class="side card">
+        <h2>قواعد بيانات فايسلووك</h2>
+        <ul>
+          <li>منشورات + تفاعلات + تعليقات متداخلة.</li>
+          <li>Stories + Reels + Marketplace.</li>
+          <li>مجموعات وصفحات وأحداث.</li>
+          <li>رسائل خاصة ومجتمعات Server/Channel.</li>
+        </ul>
+      </article>
+    </aside>
+  </main>
+
+  <footer>
+    © 2026 فايسلووك - منصة اجتماعية تجريبية قابلة للنشر العلني
+  </footer>
+</body>
+</html>
