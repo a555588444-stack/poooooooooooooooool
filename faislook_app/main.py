@@ -56,6 +56,11 @@ def home():
     return render_template("index.html", user=user, posts=posts, chat_messages=chat_messages)
 
 
+@app.route("/health")
+def health():
+    return {"status": "ok", "service": "faislook"}, 200
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
