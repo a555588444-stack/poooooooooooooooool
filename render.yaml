@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: faislook-web
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 2 -b 0.0.0.0:$PORT faislook_app.main:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: faislook-db
+          property: connectionString
+
+  - type: web
+    name: faislook-static
+    runtime: static
+    plan: free
+    buildCommand: ""
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /
+        destination: /study-site.html
+
+
+databases:
+  - name: faislook-db
+    plan: free
+    databaseName: faislook
+    user: faislook
