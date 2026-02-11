@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}فايسلووك{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <h1><a href="{{ url_for('home') }}">فايسلووك</a></h1>
+    <nav>
+      {% if user %}
+        <span>مرحباً {{ user.username }}</span>
+        <a href="{{ url_for('logout') }}">تسجيل خروج</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">تسجيل دخول</a>
+        <a href="{{ url_for('register') }}">إنشاء حساب</a>
+      {% endif %}
+    </nav>
+  </header>
+
+  <main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-wrap">
+          {% for category, msg in messages %}
+            <div class="flash {{ category }}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

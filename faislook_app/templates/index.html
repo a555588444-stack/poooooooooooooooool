@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}فايسلووك | الصفحة الرئيسية{% endblock %}
+{% block content %}
+<section class="grid">
+  <section class="card">
+    <h2>نشر منشور (نص/صورة/فيديو)</h2>
+    {% if user %}
+    <form method="post" action="{{ url_for('create_post') }}" class="form">
+      <textarea name="text" placeholder="اكتب منشورك..."></textarea>
+      <input name="media_url" placeholder="رابط صورة أو فيديو (اختياري)">
+      <select name="media_type">
+        <option value="">بدون وسائط</option>
+        <option value="image">صورة</option>
+        <option value="video">فيديو</option>
+      </select>
+      <button type="submit">نشر</button>
+    </form>
+    {% else %}
+    <p>يجب تسجيل الدخول أولاً للنشر.</p>
+    {% endif %}
+  </section>
+
+  <section class="card">
+    <h2>الدردشة العامة</h2>
+    <div class="chat-box">
+      {% for m in chat_messages %}
+        <div class="chat-line"><b>{{ m.user.username }}:</b> {{ m.message }}</div>
+      {% else %}
+        <p>لا توجد رسائل بعد.</p>
+      {% endfor %}
+    </div>
+    {% if user %}
+    <form method="post" action="{{ url_for('send_chat_message') }}" class="form row">
+      <input name="message" placeholder="اكتب رسالة...">
+      <button type="submit">إرسال</button>
+    </form>
+    {% endif %}
+  </section>
+</section>
+
+<section class="card">
+  <h2>المنشورات</h2>
+  {% for p in posts %}
+    <article class="post">
+      <div class="meta">{{ p.user.username }} • {{ p.created_at.strftime('%Y-%m-%d %H:%M') }}</div>
+      <p>{{ p.text }}</p>
+      {% if p.media_url and p.media_type == 'image' %}
+        <img src="{{ p.media_url }}" alt="post image">
+      {% elif p.media_url and p.media_type == 'video' %}
+        <video controls src="{{ p.media_url }}"></video>
+      {% endif %}
+    </article>
+  {% else %}
+    <p>لا توجد منشورات حالياً.</p>
+  {% endfor %}
+</section>
+{% endblock %}

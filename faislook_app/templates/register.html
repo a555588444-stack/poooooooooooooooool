@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}إنشاء حساب{% endblock %}
+{% block content %}
+<section class="card small">
+  <h2>إنشاء حساب</h2>
+  <form method="post" class="form">
+    <input name="username" placeholder="اسم المستخدم" required>
+    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+    <input type="password" name="password" placeholder="كلمة المرور" required>
+    <button type="submit">إنشاء</button>
+  </form>
+</section>
+{% endblock %}
